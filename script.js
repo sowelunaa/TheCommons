@@ -12,6 +12,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Shrinking header on home page
+if (document.querySelector('.home-hero')) {
+    // Create sticky nav element
+    const stickyNav = document.createElement('nav');
+    stickyNav.className = 'sticky-nav';
+    stickyNav.innerHTML = `
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">The Commons</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Map</a></li>
+                <li><a href="coliving.html">Co-Living</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="add-group.html">Add A Group</a></li>
+                <li><a href="acknowledgments.html">Acknowledgments</a></li>
+            </ul>
+        </div>
+    `;
+    document.body.insertBefore(stickyNav, document.body.firstChild);
+
+    const homeHero = document.querySelector('.home-hero');
+    const heroHeight = homeHero.offsetHeight;
+
+    // Handle scroll event
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        
+        if (scrollPosition > heroHeight * 0.6) {
+            homeHero.classList.add('scrolled');
+            stickyNav.classList.add('visible');
+        } else {
+            homeHero.classList.remove('scrolled');
+            stickyNav.classList.remove('visible');
+        }
+    });
+}
+
 // Add fade-in animation on scroll
 const observerOptions = {
     threshold: 0.1,

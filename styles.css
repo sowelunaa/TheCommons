@@ -162,9 +162,9 @@ body {
 /* Title Box - Inset Treatment */
 .title-box {
     background: var(--background-color);
-    padding: 3.5rem 5rem;
-    margin: 0 auto 3rem;
-    max-width: 900px;
+    padding: 2.5rem 4rem;
+    margin: 0 auto 2rem;
+    max-width: 700px;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
     position: relative;
 }
@@ -182,12 +182,22 @@ body {
 
 .hero-title {
     font-family: 'Lora', 'Crimson Text', serif;
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: 0.02em;
     margin: 0;
     line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--background-color);
+    margin: 1rem 0 0;
+    opacity: 0.9;
+    letter-spacing: 0.02em;
 }
 
 .home-hero .main-nav {
@@ -210,7 +220,7 @@ body {
 }
 
 .home-hero .nav-links a::after {
-    background-color: var(--background-color);
+    background-color: var(--accent-red-brown);
 }
 
 .home-hero .nav-links a:hover,
@@ -265,7 +275,7 @@ body {
 
 .closing-text {
     font-style: italic;
-    color: var(--accent-warm);
+    color: var(--text-color);
     margin-top: 2.5rem !important;
     text-align: center !important;
     padding: 0 2rem;
@@ -359,7 +369,7 @@ body {
 /* Page Header (for non-home pages) */
 .page-header {
     text-align: center;
-    padding: 2.5rem 3rem 2rem;
+    padding: 2rem 3rem 1.5rem;
 }
 
 .page-title {
@@ -369,6 +379,19 @@ body {
     color: var(--primary-color);
     margin-bottom: 0;
     letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1.5px;
+    background: var(--accent-red-brown);
 }
 
 .page-subtitle {
@@ -494,6 +517,12 @@ body {
     overflow: hidden;
     margin-bottom: 0;
     padding: 4rem 2rem 3rem;
+    transition: all 0.4s ease;
+}
+
+.home-hero.scrolled {
+    min-height: 0;
+    padding: 0;
 }
 
 .home-hero .hero-background {
@@ -503,12 +532,103 @@ body {
     width: 100%;
     height: 100%;
     background: #3D4028;
+    transition: opacity 0.4s ease;
+}
+
+.home-hero.scrolled .hero-background {
+    opacity: 0;
 }
 
 .home-hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.home-hero.scrolled .home-hero-content {
+    transform: scale(0);
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Sticky nav that appears on scroll */
+.sticky-nav {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--primary-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: top 0.4s ease;
+}
+
+.sticky-nav.visible {
+    top: 0;
+}
+
+.sticky-nav .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.75rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-nav .nav-logo {
+    font-family: 'Lora', 'Crimson Text', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--background-color);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.sticky-nav .nav-logo:hover {
+    color: rgba(242, 239, 223, 0.8);
+}
+
+.sticky-nav .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.sticky-nav .nav-links a {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    color: var(--background-color);
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+}
+
+.sticky-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-red-brown);
+    transition: width 0.3s ease;
+}
+
+.sticky-nav .nav-links a:hover,
+.sticky-nav .nav-links a.active {
+    color: var(--background-color);
+}
+
+.sticky-nav .nav-links a:hover::after,
+.sticky-nav .nav-links a.active::after {
     width: 100%;
 }
 
@@ -518,13 +638,16 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.home-hero .nav-logo,
+.home-hero .nav-logo {
+    display: none;
+}
+
 .home-hero .nav-links a {
-    color: var(--background-color);
+    color: rgba(242, 239, 223, 0.9);
 }
 
 .home-hero .nav-links a::after {
-    background-color: var(--background-color);
+    background-color: var(--accent-red-brown);
 }
 
 .home-hero .nav-links a:hover,
