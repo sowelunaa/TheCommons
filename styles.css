@@ -1,0 +1,396 @@
+:root {
+    --primary-color: #3D4028;
+    --text-color: #3D4028;
+    --background-color: #F2efdf;
+    --border-subtle: #d4cfc4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Charter BT', 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation */
+.main-nav {
+    position: sticky;
+    top: 0;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Charter BT', 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-family: 'Charter BT', 'Georgia', serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3D4028;
+    opacity: 1;
+}
+
+.hero-pattern {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Charter BT', 'Georgia', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 700;
+    color: var(--background-color);
+    letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem 4rem;
+}
+
+/* Intro Section */
+.intro-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-family: 'Charter BT', 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.closing-text {
+    font-style: italic;
+    color: var(--text-color);
+    margin-top: 2rem !important;
+    text-align: center !important;
+}
+
+/* Map Section */
+.map-section {
+    margin: 5rem 0;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Content Sections */
+.content-section {
+    margin: 4rem 0;
+}
+
+.content-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-text p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Video Container */
+.video-container {
+    margin: 3rem 0;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Form Container */
+.form-container {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container iframe {
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 6rem;
+}
+
+.site-footer p {
+    font-family: 'Charter BT', 'Georgia', serif;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 1.5rem 3rem;
+    }
+    
+    .hero {
+        height: 35vh;
+        min-height: 250px;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .intro-text p,
+    .content-text p {
+        text-align: center;
+    }
+    
+    .map-container arcgis-embedded-map {
+        height: 400px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem 2rem;
+    }
+}
+
+/* Page Header (for non-home pages) */
+.page-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+
+.page-title {
+    font-family: 'Charter BT', 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+/* Home page specific hero banner */
+.home-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.home-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3D4028;
+}
+
+.home-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+.home-hero .main-nav {
+    position: relative;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-hero .nav-logo,
+.home-hero .nav-links a {
+    color: var(--background-color);
+}
+
+.home-hero .nav-links a::after {
+    background-color: var(--background-color);
+}
+
+.home-hero .nav-links a:hover,
+.home-hero .nav-links a.active {
+    color: var(--background-color);
+}

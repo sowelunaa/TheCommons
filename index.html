@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Commons - Community Support Systems</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://js.arcgis.com/4.34/embeddable-components/"></script>
+</head>
+<body>
+    <header class="home-hero">
+        <div class="hero-background"></div>
+        <div class="home-hero-content">
+            <h1 class="hero-title">The Commons</h1>
+            <nav class="main-nav">
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">Map</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="coliving.html">Co-Living</a></li>
+                        <li><a href="add-group.html">Add A Group</a></li>
+                        <li><a href="acknowledgments.html">Acknowledgments</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-section">
+            <h2 class="section-title">The Map</h2>
+            <div class="intro-text">
+                <p>This map documents community support systems across Europe and the United States. These are organizations built by people who saw a need in their neighborhood and decided to act.</p>
+                
+                <p>What connects them is not a shared model or ideology, but a commitment to building from the ground up using what they already have. These are not charities, they are neighbors working alongside one another.</p>
+                
+                <p>Click on any location to see what each organization does, and follow the link to learn more or discover how you could start something similar in your own community.</p>
+                
+                <p>Right now, the map is small, but it is growing. If you are involved in a group like these, please use the form linked above to add them to the map.</p>
+                
+                <p class="closing-text">This is not a blueprint. It is a collection of possibilities, different approaches to the same question: how do we take care of each other?</p>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="map-container">
+                <arcgis-embedded-map 
+                    style="height:600px;width:100%;max-width:1200px;" 
+                    item-id="adfcf92cd903401ca13d42ac59acd1ae" 
+                    theme="light" 
+                    center="-63.0989456176593,32.67051665264315"
+                    scale="73957190.948944" 
+                    portal-url="https://cornellcollege.maps.arcgis.com">
+                </arcgis-embedded-map>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>2026 The Commons. A collection of community possibilities.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

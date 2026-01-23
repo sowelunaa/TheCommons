@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Living - The Commons</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://js.arcgis.com/4.34/embeddable-components/"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">The Commons</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Map</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="coliving.html" class="active">Co-Living</a></li>
+                <li><a href="add-group.html">Add A Group</a></li>
+                <li><a href="acknowledgments.html">Acknowledgments</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Co-Living</h1>
+    </header>
+
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title">Beyond the White Picket Fence</h2>
+            <div class="content-text">
+                <p>Beyond individual organizations, some people are reimagining housing itself as a form of community support, building community directly into how and where we live. Watch my documentary Beyond the White Picket Fence to learn more about communal living, and then explore the communities featured in the video using the map below.</p>
+            </div>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/HN3IsfFoCxI" 
+                    title="Beyond the White Picket Fence" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2 class="section-title">Featured Communities</h2>
+            <div class="map-container">
+                <arcgis-embedded-map 
+                    style="height:600px;width:100%;max-width:1200px;" 
+                    item-id="99903ebab78745958faf2483e6d891d0" 
+                    theme="light" 
+                    center="-87.83864037797308,50.13595089630074"
+                    scale="73957190.9489445" 
+                    portal-url="https://cornellcollege.maps.arcgis.com">
+                </arcgis-embedded-map>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>2026 The Commons. A collection of community possibilities.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
