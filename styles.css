@@ -2,7 +2,9 @@
     --primary-color: #3D4028;
     --text-color: #3D4028;
     --background-color: #F2efdf;
+    --accent-warm: #8B7E6A;
     --border-subtle: #d4cfc4;
+    --box-shadow: 0 4px 20px rgba(61, 64, 40, 0.08);
 }
 
 * {
@@ -16,13 +18,14 @@ html {
 }
 
 body {
-    font-family: 'Charter BT', 'Georgia', serif;
-    font-size: 18px;
-    line-height: 1.8;
+    font-family: 'Crimson Text', 'Charter BT', 'Georgia', serif;
+    font-size: 19px;
+    line-height: 1.75;
     color: var(--text-color);
     background-color: var(--background-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.01em;
 }
 
 /* Navigation */
@@ -30,50 +33,50 @@ body {
     position: sticky;
     top: 0;
     background: var(--background-color);
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid rgba(61, 64, 40, 0.15);
     z-index: 100;
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
 }
 
 .nav-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem 3rem;
+    padding: 1.75rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .nav-logo {
-    font-family: 'Charter BT', 'Georgia', serif;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-family: 'Cormorant Garamond', 'Crimson Text', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
     color: var(--primary-color);
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
     transition: all 0.3s ease;
 }
 
 .nav-logo:hover {
-    color: var(--primary-color);
-    transform: translateY(-1px);
+    color: var(--accent-warm);
 }
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 3rem;
     list-style: none;
 }
 
 .nav-links a {
-    font-family: 'Charter BT', 'Georgia', serif;
-    font-size: 1.1rem;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
     color: var(--text-color);
     text-decoration: none;
     position: relative;
     padding: 0.5rem 0;
     transition: color 0.3s ease;
+    letter-spacing: 0.03em;
+    font-weight: 400;
 }
 
 .nav-links a::after {
@@ -82,7 +85,7 @@ body {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
@@ -97,69 +100,118 @@ body {
     width: 100%;
 }
 
-/* Hero Section */
-.hero {
+/* Hero Section - Home Page Only */
+.home-hero {
     position: relative;
-    height: 40vh;
-    min-height: 300px;
+    min-height: 450px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
+    padding: 4rem 2rem 3rem;
 }
 
-.hero-background {
+.home-hero .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: #3D4028;
-    opacity: 1;
 }
 
-.hero-pattern {
-    display: none;
-}
-
-.hero-content {
+.home-hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Title Box - Inset Treatment */
+.title-box {
+    background: var(--background-color);
+    padding: 3.5rem 5rem;
+    margin: 0 auto 3rem;
+    max-width: 900px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.title-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(61, 64, 40, 0.1);
+    pointer-events: none;
 }
 
 .hero-title {
-    font-family: 'Charter BT', 'Georgia', serif;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    font-weight: 700;
-    color: var(--background-color);
-    letter-spacing: 2px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    font-family: 'Cormorant Garamond', 'Crimson Text', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 500;
+    color: var(--primary-color);
+    letter-spacing: 0.02em;
     margin: 0;
+    line-height: 1.2;
+}
+
+.home-hero .main-nav {
+    position: relative;
+    background: transparent;
+    border-bottom: 1px solid rgba(242, 239, 223, 0.25);
+    margin-top: 1rem;
+}
+
+.home-hero .nav-container {
+    justify-content: center;
+}
+
+.home-hero .nav-logo {
+    display: none;
+}
+
+.home-hero .nav-links a {
+    color: rgba(242, 239, 223, 0.9);
+}
+
+.home-hero .nav-links a::after {
+    background-color: var(--background-color);
+}
+
+.home-hero .nav-links a:hover,
+.home-hero .nav-links a.active {
+    color: var(--background-color);
 }
 
 /* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 3rem 4rem;
+    padding: 5rem 3rem;
 }
 
 /* Intro Section */
 .intro-section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .section-title {
-    font-family: 'Charter BT', 'Georgia', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: 'Cormorant Garamond', 'Crimson Text', serif;
+    font-size: 2.75rem;
+    font-weight: 500;
     color: var(--primary-color);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-align: center;
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    letter-spacing: 0.02em;
 }
 
 .section-title::after {
@@ -168,73 +220,86 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 60px;
+    height: 2px;
     background: var(--primary-color);
 }
 
 .intro-text {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
 .intro-text p {
-    margin-bottom: 1.5rem;
-    text-align: center;
+    margin-bottom: 1.75rem;
+    text-align: left;
+    text-indent: 2.5em;
+}
+
+.intro-text p:first-of-type {
+    text-indent: 0;
 }
 
 .closing-text {
     font-style: italic;
-    color: var(--text-color);
-    margin-top: 2rem !important;
-    text-align: center !important;
+    color: var(--accent-warm);
+    margin-top: 2.5rem !important;
+    text-indent: 0 !important;
+    text-align: left !important;
+    padding-left: 2rem;
+    border-left: 2px solid rgba(61, 64, 40, 0.2);
 }
 
 /* Map Section */
 .map-section {
-    margin: 5rem 0;
+    margin: 6rem 0;
 }
 
 .map-container {
     display: flex;
     justify-content: center;
-    border: 1px solid var(--border-subtle);
-    border-radius: 8px;
+    border: 1px solid rgba(61, 64, 40, 0.12);
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--box-shadow);
     background: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .map-container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 30px rgba(61, 64, 40, 0.12);
 }
 
 /* Content Sections */
 .content-section {
-    margin: 4rem 0;
+    margin: 5rem 0;
 }
 
 .content-text {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
 .content-text p {
-    margin-bottom: 1.5rem;
-    text-align: center;
+    margin-bottom: 1.75rem;
+    text-align: left;
+    text-indent: 2.5em;
+}
+
+.content-text p:first-of-type {
+    text-indent: 0;
 }
 
 /* Video Container */
 .video-container {
-    margin: 3rem 0;
+    margin: 4rem 0;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(61, 64, 40, 0.08);
 }
 
 .video-container iframe {
@@ -247,15 +312,15 @@ body {
 
 /* Form Container */
 .form-container {
-    margin: 3rem 0;
+    margin: 4rem 0;
     display: flex;
     justify-content: center;
 }
 
 .form-container iframe {
-    border: 1px solid var(--border-subtle);
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(61, 64, 40, 0.12);
+    border-radius: 2px;
+    box-shadow: var(--box-shadow);
 }
 
 /* Footer */
@@ -263,18 +328,43 @@ body {
     background: var(--primary-color);
     color: var(--background-color);
     text-align: center;
-    padding: 3rem 2rem;
-    margin-top: 6rem;
+    padding: 3.5rem 2rem;
+    margin-top: 8rem;
+    border-top: 1px solid rgba(61, 64, 40, 0.1);
 }
 
 .site-footer p {
-    font-family: 'Charter BT', 'Georgia', serif;
-    font-size: 1rem;
-    opacity: 0.9;
+    font-family: 'Crimson Text', serif;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    letter-spacing: 0.03em;
+}
+
+/* Page Header (for non-home pages) */
+.page-header {
+    text-align: center;
+    padding: 4.5rem 3rem 3rem;
+    border-bottom: 1px solid rgba(61, 64, 40, 0.1);
+    background: linear-gradient(to bottom, 
+        rgba(61, 64, 40, 0.02) 0%, 
+        transparent 100%);
+}
+
+.page-title {
+    font-family: 'Cormorant Garamond', 'Crimson Text', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0;
+    letter-spacing: 0.02em;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+    
     .nav-container {
         flex-direction: column;
         gap: 1.5rem;
@@ -282,7 +372,7 @@ body {
     }
     
     .nav-links {
-        gap: 1.5rem;
+        gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -292,29 +382,46 @@ body {
     }
     
     .container {
-        padding: 0 1.5rem 3rem;
+        padding: 3rem 2rem;
     }
     
-    .hero {
-        height: 35vh;
-        min-height: 250px;
+    .home-hero {
+        min-height: 350px;
+        padding: 3rem 1.5rem 2rem;
+    }
+    
+    .title-box {
+        padding: 2.5rem 2rem;
     }
     
     .hero-title {
-        font-size: clamp(2.5rem, 10vw, 4rem);
+        font-size: clamp(2.25rem, 8vw, 3rem);
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 2.25rem;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
     }
     
     .intro-text p,
     .content-text p {
-        text-align: center;
+        text-indent: 0;
+        text-align: left;
+    }
+    
+    .closing-text {
+        padding-left: 1rem;
     }
     
     .map-container arcgis-embedded-map {
         height: 400px !important;
+    }
+    
+    .page-header {
+        padding: 3rem 2rem 2rem;
     }
 }
 
@@ -324,39 +431,41 @@ body {
     }
     
     .nav-container {
-        padding: 1rem;
+        padding: 1.25rem 1rem;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
     }
     
     .container {
-        padding: 0 1rem 2rem;
+        padding: 2rem 1.5rem;
     }
-}
-
-/* Page Header (for non-home pages) */
-.page-header {
-    text-align: center;
-    padding: 3rem 0 2rem;
-}
-
-.page-title {
-    font-family: 'Charter BT', 'Georgia', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0;
+    
+    .title-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .page-title {
+        font-size: 2.25rem;
+    }
 }
 
 /* Home page specific hero banner */
 .home-hero {
     position: relative;
-    height: 40vh;
-    min-height: 300px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin-bottom: 0;
+    padding: 4rem 2rem 3rem;
 }
 
 .home-hero .hero-background {
