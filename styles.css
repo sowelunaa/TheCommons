@@ -450,9 +450,7 @@ body {
 }
 
 .acknowledgments-intro p {
-    font-size: 1.5rem;
-    font-family: 'Lora', 'Crimson Text', serif;
-    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .acknowledgments-grid {
