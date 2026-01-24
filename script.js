@@ -32,6 +32,7 @@ if (document.querySelector('.home-hero')) {
     document.body.insertBefore(stickyNav, document.body.firstChild);
 
     const homeHero = document.querySelector('.home-hero');
+    const mainContainer = document.querySelector('.container');
     const heroHeight = homeHero.offsetHeight;
 
     // Handle scroll event
@@ -41,9 +42,17 @@ if (document.querySelector('.home-hero')) {
         if (scrollPosition > heroHeight * 0.6) {
             homeHero.classList.add('scrolled');
             stickyNav.classList.add('visible');
+            // Add padding to main content so it's not hidden
+            if (mainContainer) {
+                mainContainer.style.paddingTop = '100px';
+            }
         } else {
             homeHero.classList.remove('scrolled');
             stickyNav.classList.remove('visible');
+            // Remove padding when nav is hidden
+            if (mainContainer) {
+                mainContainer.style.paddingTop = '5rem';
+            }
         }
     });
 }

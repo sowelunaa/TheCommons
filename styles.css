@@ -162,9 +162,9 @@ body {
 /* Title Box - Inset Treatment */
 .title-box {
     background: var(--background-color);
-    padding: 2.5rem 4rem;
+    padding: 3rem 5rem;
     margin: 0 auto 2rem;
-    max-width: 700px;
+    max-width: 1100px;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
     position: relative;
 }
@@ -182,22 +182,21 @@ body {
 
 .hero-title {
     font-family: 'Lora', 'Crimson Text', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: 0.02em;
-    margin: 0;
+    margin: 0 0 1rem 0;
     line-height: 1.2;
 }
 
 .hero-subtitle {
     font-family: 'Crimson Text', serif;
-    font-size: 1.25rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 400;
-    color: var(--background-color);
-    margin: 1rem 0 0;
-    opacity: 0.9;
-    letter-spacing: 0.02em;
+    color: var(--accent-red-brown);
+    margin: 0;
+    letter-spacing: 0.01em;
 }
 
 .home-hero .main-nav {
@@ -233,6 +232,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 5rem 3rem;
+    transition: padding-top 0.4s ease;
 }
 
 /* Intro Section */
@@ -303,7 +303,7 @@ body {
 
 /* Content Sections */
 .content-section {
-    margin: 5rem 0;
+    margin: 2rem 0;
 }
 
 .content-text {
@@ -369,7 +369,8 @@ body {
 /* Page Header (for non-home pages) */
 .page-header {
     text-align: center;
-    padding: 2rem 3rem 1.5rem;
+    padding: 2rem 3rem 1rem;
+    margin-bottom: 2rem;
 }
 
 .page-title {
