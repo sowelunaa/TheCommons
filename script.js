@@ -33,7 +33,7 @@ if (document.querySelector('.home-hero')) {
 
     const homeHero = document.querySelector('.home-hero');
     const mainContainer = document.querySelector('.container');
-    const heroHeight = 450; // Fixed height to prevent jumping
+    const heroHeight = 350; // Fixed height to prevent jumping
 
     // Handle scroll event with threshold
     let lastScroll = 0;

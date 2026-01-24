@@ -161,32 +161,22 @@ body {
 
 /* Title Box - Inset Treatment */
 .title-box {
-    background: #fdf2e2;
-    padding: 3rem 5rem;
-    margin: 0 auto 2rem;
-    max-width: 1100px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    background: var(--background-color);
+    padding: 2.5rem 4rem;
+    margin: 0 auto 0;
+    max-width: 900px;
+    box-shadow: none;
     position: relative;
-}
-
-.title-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px solid rgba(61, 64, 40, 0.1);
-    pointer-events: none;
+    border: 1px solid rgba(61, 64, 40, 0.15);
 }
 
 .hero-title {
     font-family: 'Lora', 'Crimson Text', serif;
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--accent-red-brown);
     letter-spacing: 0.02em;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
     line-height: 1.2;
 }
 
@@ -284,6 +274,7 @@ body {
     margin-top: 2.5rem !important;
     text-align: center !important;
     padding: 0 2rem;
+    font-size: 1.1rem;
 }
 
 /* Map Section */
@@ -521,19 +512,19 @@ body {
 /* Home page specific hero banner */
 .home-hero {
     position: relative;
-    min-height: 450px;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin-bottom: 0;
-    padding: 4rem 2rem 3rem;
+    padding: 3rem 2rem 2rem;
 }
 
 .home-hero.scrolled {
-    min-height: 450px;
-    padding: 4rem 2rem 3rem;
+    min-height: 350px;
+    padding: 3rem 2rem 2rem;
 }
 
 .home-hero .hero-background {
@@ -644,8 +635,9 @@ body {
 
 .home-hero .main-nav {
     position: relative;
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--background-color);
+    border-bottom: none;
+    border-top: 1px solid rgba(61, 64, 40, 0.15);
 }
 
 .home-hero .nav-logo {
@@ -653,7 +645,7 @@ body {
 }
 
 .home-hero .nav-links a {
-    color: rgba(242, 239, 223, 0.9);
+    color: var(--text-color);
 }
 
 .home-hero .nav-links a::after {
@@ -662,5 +654,5 @@ body {
 
 .home-hero .nav-links a:hover,
 .home-hero .nav-links a.active {
-    color: var(--background-color);
+    color: var(--primary-color);
 }
