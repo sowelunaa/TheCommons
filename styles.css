@@ -162,9 +162,9 @@ body {
 /* Title Box - Inset Treatment */
 .title-box {
     background: var(--background-color);
-    padding: 2.5rem 4rem;
+    padding: 2rem 3rem;
     margin: 0 auto 0;
-    max-width: 900px;
+    max-width: 750px;
     box-shadow: none;
     position: relative;
     border: 1px solid rgba(61, 64, 40, 0.15);
@@ -172,17 +172,17 @@ body {
 
 .hero-title {
     font-family: 'Lora', 'Crimson Text', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 700;
-    color: var(--accent-red-brown);
+    color: var(--primary-color);
     letter-spacing: 0.02em;
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.5rem 0;
     line-height: 1.2;
 }
 
 .hero-subtitle {
     font-family: 'Crimson Text', serif;
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: 400;
     color: var(--accent-red-brown);
     margin: 0;
@@ -512,19 +512,19 @@ body {
 /* Home page specific hero banner */
 .home-hero {
     position: relative;
-    min-height: 350px;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible;
     margin-bottom: 0;
-    padding: 3rem 2rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .home-hero.scrolled {
-    min-height: 350px;
-    padding: 3rem 2rem 2rem;
+    min-height: auto;
+    padding: 3rem 2rem;
 }
 
 .home-hero .hero-background {
@@ -634,14 +634,27 @@ body {
 }
 
 .home-hero .main-nav {
-    position: relative;
-    background: var(--background-color);
-    border-bottom: none;
-    border-top: 1px solid rgba(61, 64, 40, 0.15);
+    position: static;
+    background: #e8e3d1;
+    border-bottom: 1px solid rgba(61, 64, 40, 0.12);
+    border-top: 1px solid rgba(61, 64, 40, 0.12);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 0;
+}
+
+.home-hero .nav-container {
+    justify-content: center;
+    max-width: none;
+    padding: 1.25rem 3rem;
 }
 
 .home-hero .nav-logo {
     display: none;
+}
+
+.home-hero .nav-links {
+    gap: 3rem;
 }
 
 .home-hero .nav-links a {
@@ -655,4 +668,59 @@ body {
 .home-hero .nav-links a:hover,
 .home-hero .nav-links a.active {
     color: var(--primary-color);
+}
+
+/* Home page navigation band */
+.home-nav {
+    background: #e8e3d1;
+    border-bottom: 1px solid rgba(61, 64, 40, 0.12);
+    border-top: 1px solid rgba(61, 64, 40, 0.12);
+    width: 100%;
+}
+
+.home-nav .nav-container {
+    max-width: none;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-nav .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.home-nav .nav-links a {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+}
+
+.home-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-red-brown);
+    transition: width 0.3s ease;
+}
+
+.home-nav .nav-links a:hover,
+.home-nav .nav-links a.active {
+    color: var(--primary-color);
+}
+
+.home-nav .nav-links a:hover::after,
+.home-nav .nav-links a.active::after {
+    width: 100%;
 }
