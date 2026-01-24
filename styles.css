@@ -231,8 +231,13 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 5rem 3rem;
+    padding: 0 3rem 4rem;
     transition: padding-top 0.4s ease;
+}
+
+/* Home page container needs top padding */
+.home-hero + .container {
+    padding-top: 5rem;
 }
 
 /* Intro Section */
