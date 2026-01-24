@@ -33,27 +33,29 @@ if (document.querySelector('.home-hero')) {
 
     const homeHero = document.querySelector('.home-hero');
     const mainContainer = document.querySelector('.container');
-    const heroHeight = homeHero.offsetHeight;
+    const heroHeight = 450; // Fixed height to prevent jumping
 
-    // Handle scroll event
+    // Handle scroll event with threshold
+    let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
         
-        if (scrollPosition > heroHeight * 0.6) {
+        // Only transition when crossing the threshold, not continuously
+        if (scrollPosition > heroHeight * 0.7 && lastScroll <= heroHeight * 0.7) {
             homeHero.classList.add('scrolled');
             stickyNav.classList.add('visible');
-            // Add padding to main content so it's not hidden
             if (mainContainer) {
-                mainContainer.style.paddingTop = '100px';
+                mainContainer.style.paddingTop = '120px';
             }
-        } else {
+        } else if (scrollPosition <= heroHeight * 0.7 && lastScroll > heroHeight * 0.7) {
             homeHero.classList.remove('scrolled');
             stickyNav.classList.remove('visible');
-            // Remove padding when nav is hidden
             if (mainContainer) {
                 mainContainer.style.paddingTop = '5rem';
             }
         }
+        
+        lastScroll = scrollPosition;
     });
 }
 
