@@ -159,22 +159,32 @@ body {
     margin: 0 auto;
 }
 
-/* Title Box - Inset Treatment */
+/* Title Box - No Box, Just Text */
 .title-box {
-    background: var(--background-color);
-    padding: 2rem 3rem;
-    margin: 0 auto 1.5rem;
-    max-width: 750px;
+    background: transparent;
+    padding: 0;
+    margin: 0 auto 1rem;
+    max-width: 900px;
     box-shadow: none;
     position: relative;
-    border: 1px solid rgba(61, 64, 40, 0.15);
+    border: none;
+}
+
+/* Decorative element below title */
+.title-box::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: rgba(242, 239, 223, 0.4);
+    margin: 1rem auto 0;
 }
 
 .hero-title {
     font-family: 'Lora', 'Crimson Text', serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--background-color);
     letter-spacing: 0.02em;
     margin: 0 0 0.5rem 0;
     line-height: 1.2;
@@ -182,9 +192,9 @@ body {
 
 .hero-subtitle {
     font-family: 'Crimson Text', serif;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.75rem);
     font-weight: 400;
-    color: var(--accent-red-brown);
+    color: rgba(242, 239, 223, 0.9);
     margin: 0;
     letter-spacing: 0.01em;
 }
@@ -219,9 +229,9 @@ body {
 
 /* Container */
 .container {
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 3rem 4rem;
+    padding: 0 2rem 4rem;
     transition: padding-top 0.4s ease;
 }
 
@@ -259,12 +269,12 @@ body {
 }
 
 .intro-text {
-    max-width: 750px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .intro-text p {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -274,7 +284,7 @@ body {
     margin-top: 2.5rem !important;
     text-align: center !important;
     padding: 0 2rem;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 /* Map Section */
@@ -309,12 +319,12 @@ body {
 }
 
 .content-text {
-    max-width: 750px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .content-text p {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -371,8 +381,8 @@ body {
 /* Page Header (for non-home pages) */
 .page-header {
     text-align: center;
-    padding: 2rem 3rem 1rem;
-    margin-bottom: 2rem;
+    padding: 2rem 3rem 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .page-title {
@@ -404,6 +414,73 @@ body {
     color: var(--primary-color);
     margin-top: 0.5rem;
     letter-spacing: 0.02em;
+}
+
+/* Co-Living page special styling */
+.coliving-header .page-title {
+    padding-bottom: 1rem;
+}
+
+.coliving-title .coliving-subtitle {
+    font-size: 2rem;
+    font-weight: 400;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Section title without underline */
+.section-title-no-line {
+    font-family: 'Lora', 'Crimson Text', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/* Acknowledgments page styling */
+.acknowledgments-container {
+    max-width: 1200px;
+}
+
+.acknowledgments-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.acknowledgments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ack-column h3 {
+    font-family: 'Lora', 'Crimson Text', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.ack-column p {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.ack-italic {
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .acknowledgments-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 /* Responsive Design */
