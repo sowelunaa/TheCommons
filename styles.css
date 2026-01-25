@@ -170,16 +170,6 @@ body {
     border: none;
 }
 
-/* Decorative element below title */
-.title-box::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 2px;
-    background: rgba(242, 239, 223, 0.4);
-    margin: 1rem auto 0;
-}
-
 .hero-title {
     font-family: 'Lora', 'Crimson Text', serif;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
@@ -202,7 +192,7 @@ body {
 .home-hero .main-nav {
     position: relative;
     background: transparent;
-    border-bottom: 1px solid rgba(242, 239, 223, 0.25);
+    border-bottom: none;
     margin-top: 1rem;
 }
 
@@ -287,6 +277,13 @@ body {
     font-size: 1.3rem;
 }
 
+.emphasis-text {
+    color: var(--text-color);
+    text-align: center !important;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
 /* Map Section */
 .map-section {
     margin: 6rem 0;
@@ -327,6 +324,30 @@ body {
     margin-bottom: 1.2rem;
     text-align: center;
 }
+
+/* Bio Section with Photo */
+.bio-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bio-photo {
+    float: left;
+    width: 200px;
+    height: auto;
+    margin: 0.25rem 1.75rem 1rem 0;
+    border-radius: 6px;
+}
+
+.bio-text {
+    text-align: left;
+}
+
+.bio-text p {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
 
 /* Video Container */
 .video-container {
@@ -539,6 +560,21 @@ body {
     
     .intro-text p,
     .content-text p {
+        text-align: center;
+    }
+    
+    .bio-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 1.5rem;
+        max-width: 100%;
+    }
+    
+    .bio-text {
+        text-align: center;
+    }
+    
+    .bio-text p {
         text-align: center;
     }
     
