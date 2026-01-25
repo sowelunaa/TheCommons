@@ -480,6 +480,18 @@ body {
     text-align: left;
 }
 
+.how-to-build ul {
+    margin: 1.5rem 0 1.5rem 0;
+    padding-left: 0;
+    list-style-position: outside;
+}
+
+.how-to-build li {
+    margin-bottom: 1.2rem;
+    margin-left: 1.5rem;
+    text-align: left;
+}
+
 /* Acknowledgments page styling */
 .acknowledgments-container {
     max-width: 1200px;
