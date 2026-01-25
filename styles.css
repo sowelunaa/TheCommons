@@ -460,6 +460,26 @@ body {
     letter-spacing: 0.02em;
 }
 
+.subsection-title {
+    font-family: 'Lora', 'Crimson Text', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+    color: var(--primary-color);
+}
+
+/* How to Build section - left aligned */
+.how-to-build {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.how-to-build p {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
 /* Acknowledgments page styling */
 .acknowledgments-container {
     max-width: 1200px;
