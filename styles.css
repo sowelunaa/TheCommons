@@ -492,6 +492,28 @@ body {
     text-align: left;
 }
 
+/* Organization page photos */
+.org-photo {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(61, 64, 40, 0.08);
+}
+
+.org-photo-top {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.org-photo-middle {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
 /* Acknowledgments page styling */
 .acknowledgments-container {
     max-width: 1200px;
