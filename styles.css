@@ -270,6 +270,8 @@ body {
 
 .intro-text .signature {
     text-align: center !important;
+    display: block;
+    width: 100%;
 }
 
 .closing-text {
@@ -670,6 +672,10 @@ body {
     .intro-text p,
     .content-text p {
         text-align: center;
+    }
+    
+    .intro-text .signature {
+        text-align: center !important;
     }
     
     .bio-photo {
