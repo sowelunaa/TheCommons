@@ -265,7 +265,7 @@ body {
 
 .intro-text p {
     margin-bottom: 1.2rem;
-    text-align: center;
+    text-align: left;
 }
 
 .closing-text {
@@ -351,7 +351,8 @@ body {
 
 /* Video Container */
 .video-container {
-    margin: 4rem 0;
+    margin: 4rem auto;
+    max-width: 800px;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
