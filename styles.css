@@ -949,3 +949,75 @@ body {
 .home-nav .nav-links a.active::after {
     width: 100%;
 }
+
+/* Organization Grid Section */
+.orgs-grid-section {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+
+.orgs-grid-section .section-title {
+    margin-bottom: 3rem;
+}
+
+.orgs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.org-card {
+    background: var(--background-color);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 1.75rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.org-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(61, 64, 40, 0.15);
+    border-color: var(--accent-red-brown);
+}
+
+.org-card-name {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.org-card-location {
+    font-size: 0.95rem;
+    color: var(--accent-warm);
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+.org-card-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .orgs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .org-card {
+        padding: 1.5rem;
+    }
+    
+    .orgs-grid-section {
+        margin-top: 4rem;
+    }
+}
