@@ -277,6 +277,14 @@ body {
     font-size: 1.3rem;
 }
 
+.signature {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
 .emphasis-text {
     color: var(--text-color);
     text-align: center !important;
