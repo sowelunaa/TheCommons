@@ -268,6 +268,10 @@ body {
     text-align: left;
 }
 
+.intro-text .signature {
+    text-align: center !important;
+}
+
 .closing-text {
     font-style: italic;
     color: var(--text-color);
