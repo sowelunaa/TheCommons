@@ -366,7 +366,6 @@ body {
 /* Video Container */
 .video-container {
     margin: 4rem auto;
-    max-width: 800px;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
