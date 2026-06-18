@@ -21,7 +21,7 @@ if (document.querySelector('.home-hero')) {
         <div class="nav-container">
             <a href="index.html" class="nav-logo">The Commons</a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Map</a></li>
+                <li><a href="index.html" class="active">The Map</a></li>
                 <li><a href="coliving.html">Co-Living</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="add-group.html">Add A Group</a></li>
